@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono:size=13:antialias=true:autohint=true";
+static char *font = "Hack Nerd Font Mono:size=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -161,6 +161,7 @@ static unsigned int defaultattr = 11;
  */
 static uint forcemousemod = ShiftMask;
 
+static char *openurlcmd[] = { "/bin/sh", "-c", "~/scripts/url", "externalpipe", NULL };
 /*
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
@@ -196,6 +197,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_k,           kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_j,           kscrolldown,    {.i = -1} },
+        { TERMMOD,              XK_U,    externalpipe,   {.v = openurlcmd}},
 };
 
 /*
